@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<link rel="stylesheet" type="text/css" href="responsive.css">
+
+	<title></title>
+
+</head>
+
+<body>
+
+		<div class="container">
+
+			
+				<div class="header-wrapper">
+				<div class="logo-wrapper">
+
+					<img src="logo.png">
+					
+					</div>
+				
+				
+
+
+					<div class="section2">
+						<h2>Payment Plan Value</h2>
+<div class="value-area">
+<input type="text" class="payment_plan_value" id="payment_plan_value" placeholder="enter value" min="500" max="10000" /> 
+<div class="submit-button" id="calculate">Calculate</div>
+<p><b class="errormsg">Enter value between -</b><i>Min: $500</i><i>Max: $10,000</i></p>
+</div>
+						
+
+					</div>
+
+				
+			</div>
+				<div class="left-bx">
+					<h4>Qualify the Customer</h4>
+				<div class="txt-bx1">
+
+					<p>Email Address</p>
+
+					<p>Text Messaging Accepted</p>
+
+					<p>Online Banking</p>
+
+					<p>Credit Card (not Debit)</p>
+
+					<h3>Available Balance required if paying<br />first payment with Bank Account (34%)</h3>
+
+					<h3>Available Balance required if paying<br />first payment with Credit Card (20%)</h3>
+
+				</div>
+
+				<div class="txt-bx2">
+
+					<p>Yes</p>
+
+					<p>Yes</p>
+
+					<p>Yes</p>
+
+					<p>Yes</p>
+
+					<h3 class="percent34">0</h3>
+
+					<h3 class="percent20">0</h3>
+
+				</div>
+
+			</div>
+
+
+
+			<div class="right-bx">
+
+				
+
+				<table>
+
+				  <tr>
+
+				  	<th></th>
+
+				    <th>Down Payment</th>
+
+				    <th>Monthly Pmt</th>
+
+				    <th>Total Pmt</th>
+
+				  </tr>
+
+				  <tr>
+
+				    <td><b>First Payment</b></td>
+
+				    <td class="percent20">0</td>
+
+				    <td class="installment_month">0</td>
+
+				    <td><i class="downpayment_installment">0</i></td>
+
+				  </tr>
+
+				  <tr>
+
+				    <td><b>Payment 2</b></td>
+
+				    <td></td>
+
+				    <td class="installment_month">0</td>
+
+				    <td class="installment_month">0</td>
+
+				  </tr>
+
+				  <tr>
+
+				    <td><b>Payment 3</b></td>
+
+				    <td></td>
+
+				    <td class="installment_month">0</td>
+
+				    <td class="installment_month">0</td>
+
+				  </tr>
+
+				  <tr>
+
+				    <td><b>Payment 4</b></td>
+
+				    <td></td>
+
+				    <td class="installment_month">0</td>
+
+				    <td class="installment_month">0</td>
+
+				  </tr>
+
+				  <tr>
+
+				    <td><b>Payment 5</b></td>
+
+				    <td></td>
+
+				    <td class="installment_month">0</td>
+
+				    <td class="installment_month">0</td>
+
+				  </tr>
+
+				  <tr>
+
+				    <td><b>Payment 6</b></td>
+
+				    <td></td>
+
+				    <td class="installment_month">0</td>
+
+				    <td class="installment_month">0</td>
+
+				  </tr>
+
+				  <tr>
+
+				    <td><b>Payment 7</b></td>
+
+				    <td></td>
+
+				    <td class="installment_month">0</td>
+
+				    <td class="installment_month">0</td>
+
+				  </tr>
+
+				  <tr>
+
+				    <td><b>Payment 8</b></td>
+
+				    <td></td>
+
+				    <td class="installment_month">0</td>
+
+				    <td class="installment_month">0</td>
+
+				  </tr>
+
+				  <tr>
+
+				    <td><b>Payment 9</b></td>
+
+				    <td></td>
+
+				    <td class="installment_month">0</td>
+
+				    <td class="installment_month">0</td>
+
+				  </tr>
+
+				  <tr>
+
+				    <td><b>Payment 10</b></td>
+
+				    <td></td>
+
+				    <td class="installment_month">0</td>
+
+				    <td class="installment_month">0</td>
+
+				  </tr>
+
+				  <tr>
+
+				    <td><b>Payment 11</b></td>
+
+				    <td></td>
+
+				    <td class="installment_month">0</td>
+
+				    <td class="installment_month">0</td>
+
+				  </tr>
+
+				  <tr>
+
+				    <td><b>Payment 12</b></td>
+
+				    <td></td>
+
+				    <td class="installment_month">0</td>
+
+				    <td class="installment_month">0</td>
+
+				  </tr>
+
+				  <tr style="background: #fff;">
+
+				    <td></td>
+
+				    <td></td>
+
+				    <td></td>
+
+				    <td><b class="total_payment">0<b></td>
+
+				  </tr>
+
+				</table>
+
+			</div>
+
+
+
+		</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+$(function() {
+$.fn.digits = function(){ 
+    return this.each(function(){ 
+        $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
+    })
+}
+$('input').keypress(function(e) {
+    var a = [];
+    var k = e.which;
+    
+    for (i = 46; i < 58; i++)
+        a.push(i);
+    
+    if (!(a.indexOf(k)>=0))
+        e.preventDefault();
+    
+
+});
+
+$('input').on('keyup', function(evt){
+	var a = [];
+    var k = evt.which;
+    
+    for (i = 48; i < 58; i++)
+        a.push(i);
+    
+    if (!(a.indexOf(k)>=0))
+        evt.preventDefault();
+
+	if($(this).val() == '' ){
+
+	}else if (evt.which != 110 ){//not a fullstop
+        var n = parseFloat($(this).val().replace(/\,/g,''),10);
+        $(this).val(n.toLocaleString());
+    }
+});
+
+
+
+$('#calculate').click(function(){
+var payment_plan_value = $('#payment_plan_value').val();
+
+payment_plan_value=payment_plan_value.replace(/\,/g,'')
+payment_plan_value=Number(payment_plan_value)
+
+if(payment_plan_value < 500 || payment_plan_value > 10000){
+$('.errormsg').addClass('active');
+}else {
+$('.errormsg').removeClass('active');	
+var percent34 = payment_plan_value * 0.34 ;
+var percent20 = payment_plan_value * 0.20 ;
+var remaining_payment = payment_plan_value * 0.80 ;
+var installment = remaining_payment / 12;
+var downpayment_installment = percent20 + installment;
+var total_payment = (payment_plan_value*1).toFixed(2);
+$('.percent34').html('$'+percent34.toFixed(2));
+$('.percent20').html('$'+percent20.toFixed(2));
+$('.installment_month').html('$'+installment.toFixed(2));
+$('.downpayment_installment').html('$'+downpayment_installment.toFixed(2));
+$('.total_payment').html('$'+total_payment).digits();	
+}
+
+
+});
+
+
+});
+	
+</script>
+
+</body>
+
+</html>
